@@ -1,0 +1,10 @@
+<tr>
+    <td><%= location.sticker_code %></td>
+    <td><%= location.latitude %></td>
+    <td><%= location.longitude %></td>
+    <td><%= location.date %></td>
+    <td><%= location.options %></td>
+    <td><%= link_to 'Show', location, :class => 'btn' %></td>
+    <td><%= link_to 'Edit', edit_location_path(location), :class => 'btn' %></td>
+    <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn' %></td>
+</tr>

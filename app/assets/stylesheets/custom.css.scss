@@ -1,0 +1,332 @@
+/* mixins, variables, etc. */
+
+body {
+  min-width: 1100px;
+  min-height: 600px;
+  margin: 0;
+}
+
+.content-page {
+  top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.under-navbar-fixed-top {
+  margin: 0px;
+  position: relative;
+  overflow: visible;
+  top: 0px;
+  left: 0;
+  max-height: 45px;
+  width: 100%;
+  .navbar-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+    box-shadow: 0 1px 10px rgba(0,0,0,.1);
+  }
+}
+
+.navbar-fixed-top {
+  position: relative;
+  overflow: visible;
+  margin-bottom: 0px;
+  max-height: 45px;
+  .navbar-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: url("/assets/header_bg_40.png");
+  }
+}
+
+body > .navbar .brand {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0px;
+  float: left;
+  font-weight: bold;
+  color: #bd1e39;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5), 0 0 1px rgba(0,0,0,1);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+body > .navbar .brand:hover {
+  color: #bd1f3a;
+  text-shadow: 0 1px 0 rgba(0,0,0,1), 0 0 1px rgba(0,0,0,1);
+}
+
+.breadcrumb {
+  padding-top: 15px;
+  padding-left: 0px;
+}
+
+.page-params {
+  float: left;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+}
+
+#resizable-map {
+  height: 400px;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  transition: all .3s linear;
+}
+#resizable-map.expanded {
+  height: 600px;
+}
+
+.layout-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 800px;
+}
+
+.page-header-back {
+  height: 50px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.page-content {
+  min-width: 1000px;
+  position: absolute;
+  top: 90px;
+  left: 220px;
+  right: 20px;
+  z-index: -1;
+}
+
+.page-content-with-header {
+  min-width: 935px;
+  position: absolute;
+  top: 250px;
+  left: 220px;
+  right: 20px;
+  z-index: 0;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.navbar .nav > li {
+  max-height: 40px;
+}
+
+.navbar .nav > li > a {
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(0,0,0,.5), 0 0 20px rgba(0,0,0,1);
+}
+
+.page-navbar {
+  position: relative;
+  margin-bottom: 10px;
+  border: none;
+  background-color: white;
+}
+
+.page-navbar-inner {
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+
+#sidebar-nav {
+  width: 185px;
+}
+
+#sidebar-nav li a.active {
+  font-weight: bold;
+}
+
+.well-padding {
+  -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+  border: none;
+  border-bottom: 1px solid #F0F0F0;
+  padding: 10px;
+  margin: 0px;
+  margin-bottom: 10px;
+  h4, h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.show-on-hover {
+  visibility: collapse;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}  
+  100% {opacity: 1;}
+}
+
+.well {
+  background: white;
+}
+
+.well.active {
+  .show-on-hover {
+    visibility: visible;
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:0.3s;
+  -moz-animation-duration:0.3s;
+  animation-duration:0.3s;
+  }
+}
+
+.pagination {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.navbar-search-form {
+  margin-top: 5px;
+  margin-bottom: -24px;
+  margin-right: 0px;
+  .input-prepend {
+    margin-right: 10px;
+  }
+  .last {
+    margin-right: 0px;
+  }
+}
+
+.notification_confirmed {
+}
+
+.paper-shadow {
+  position: relative;
+}
+
+.paper-shadow:before, .paper-shadow:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 5px;
+  right: 5px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #CCC;
+  -webkit-box-shadow: 0 5px 2px #CCC;
+  -moz-box-shadow: 0 5px 2px #CCC;
+  box-shadow: 0 5px 2px #CCC;
+  -webkit-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+
+.sidebar {
+  background-color: #fff;
+  height: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: fixed;
+  top: 80px;
+  left: 0px;
+  overflow: sauto;
+  z-index: 0;
+  width: 185px;
+}
+.sidebar h3 {
+  margin-left: 20px;
+}
+.sidebar-margin {
+  margin-left: 10px;
+}
+
+.sidebar-btn {
+  width: 100%;
+}
+
+#map-options-panel {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  z-index: 1;
+}
+
+.input-prepend select {
+  border: none;
+}
+.input-prepend .add-on {
+  border: none;
+  padding-right: 20px;
+  background-color: white;
+}
+.navbar-fixed-top .input-prepend > .add-on {
+  background-color: transparent;
+  border: none;
+  padding-right: 10px;
+}
+
+.accordion {
+  margin-bottom: 0;
+}
+.accordion-group {
+  border: none;
+}
+.accordion-inner {
+  padding: 0;
+  border: none;
+}
+#form_search {
+  margin-bottom: -10px;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  left: 20px;
+  background-color: #f5f5f5;
+  z-index: 1;
+  height: 250px;
+  min-width: 1137px;
+}
+
+.header-well {
+  min-height: 170px;
+}

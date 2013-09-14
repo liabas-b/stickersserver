@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sticker code:</b>
+  <%= @location.sticker_code %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @location.date %>
+</p>
+
+<p>
+  <b>Options:</b>
+  <%= @location.options %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location), :class => 'btn' %> |
+<%= link_to 'Back', locations_path, :class => 'btn' %>

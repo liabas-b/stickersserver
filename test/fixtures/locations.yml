@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sticker_code: MyString
+  latitude: 1.5
+  longitude: 1.5
+  date: 2013-09-13 16:34:56
+  options: MyString
+
+two:
+  sticker_code: MyString
+  latitude: 1.5
+  longitude: 1.5
+  date: 2013-09-13 16:34:56
+  options: MyString

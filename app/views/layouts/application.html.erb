@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StickersServer</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= render 'layouts/header' %>
+	<div class="content-page">
+	  <%= yield :topnav %>
+      <span class="alerts">
+      <% flash.each do |key, value|
+        emphase = key.to_s.humanize.capitalize 
+        %>
+        <div class="alert alert-<%= key %> fade in">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong><%= emphase %></strong> <%= value %>
+        </div>
+      <% end %>
+      </span>
+      <%= yield %>
+  </div>
+</body>
+</html>
