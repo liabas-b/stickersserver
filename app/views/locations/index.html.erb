@@ -1,15 +1,8 @@
+<% provide(:title, 'Locations') %>
+
 <%= render 'locations_list_tool' %>
 
 <% content_for :topnav do %>
-    <div class="btn-group page-params">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-            <i class="icon-wrench"></i> <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu pull-left" role="menu">
-            <%= link_to 'New location', new_location_path %>
-            <li class="divider"></li>
-        </ul>
-    </div>
     <ol class="breadcrumb">
       <li><%= link_to 'Home', root_path %> / </li>
       <li class="active">Locations</li>

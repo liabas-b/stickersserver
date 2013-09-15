@@ -1,8 +1,11 @@
 class LocationsController < ApplicationController
+  before_filter :column_names
+  helper_method :sort_column, :sort_direction
+  
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction).paginate(per_page: 10, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +83,18 @@ class LocationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def sort_column
+      Location.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+    end
+
+    def column_names
+      @column_names = Location.column_names
+    end
 end

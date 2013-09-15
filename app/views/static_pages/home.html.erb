@@ -1,12 +1,16 @@
 <% provide(:title, 'Stickers Server Administration') %>
 
+
 <h1>Stickers Server Administration</h1>
 <p>Welcome to the LocateMyStickers sticker server administration tool.</p>
 <p>The following <a href="#locations">locations</a> are continuously sent by our stickers and stored to this server.</p>
 <p>The <a href="http://web-service.locatemystickers.com">web service</a> asks the locations that our web, iOs and Android client applications need to this server.</p>
+
+
 <h2><%= link_to 'Locations', locations_path %></h2>
 <p>The following locations are all the locations contained on the server.</p>
 <%= render 'locations/locations_list_tool' %>
+
 
 <% content_for :topnav do %>
 <% end %>

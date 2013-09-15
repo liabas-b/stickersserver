@@ -3,10 +3,13 @@ class StaticPagesController < ApplicationController
 	helper_method :sort_column, :sort_direction
 
 	def home
-		locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction)
-		@locations = WillPaginate::Collection.create(1, 10, locations.length) do |pager|
-		  pager.replace locations
-		end
+		@locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction).paginate(per_page: 10, :page => params[:page])
+
+	    respond_to do |format|
+	      format.html # home.html.erb
+	      format.js # home.js.erb
+	      format.json { render :json => @locations }
+	    end
 	end
 
 	private
