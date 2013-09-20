@@ -1,11 +1,15 @@
+
 class LocationsController < ApplicationController
-  before_filter :column_names
-  helper_method :sort_column, :sort_direction
+  include ApplicationHelper
   
+  before_filter :has_rights, :column_names
+  helper_method :sort_column, :sort_direction
+
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction).paginate(per_page: 10, :page => params[:page])
+    @locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction)
+    @locations = @locations.paginate(per_page: 10, :page => params[:page]) if params[:paginate] == true
 
     respond_to do |format|
       format.html # index.html.erb

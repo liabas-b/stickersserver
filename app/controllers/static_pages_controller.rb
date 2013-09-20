@@ -1,15 +1,18 @@
+
 class StaticPagesController < ApplicationController
-	before_filter :column_names
+	include ApplicationHelper
+	
+	before_filter :has_rights, :column_names
 	helper_method :sort_column, :sort_direction
 
 	def home
 		@locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction).paginate(per_page: 10, :page => params[:page])
 
-	    respond_to do |format|
-	      format.html # home.html.erb
-	      format.js # home.js.erb
-	      format.json { render :json => @locations }
-	    end
+    respond_to do |format|
+      format.html # home.html.erb
+      format.js # home.js.erb
+      format.json { render :json => @locations }
+    end
 	end
 
 	private
