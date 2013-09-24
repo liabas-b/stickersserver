@@ -7,9 +7,15 @@
 <p>The <a href="http://web-service.locatemystickers.com">web service</a> asks the locations that our web, iOs and Android client applications need to this server.</p>
 
 
-<h2><%= link_to 'Locations', locations_path %></h2>
-<p>The following locations are all the locations contained on the server.</p>
-<%= render 'locations/locations_list_tool' %>
+<pre class="head">
+	<h2><%= link_to 'Locations', locations_path %></h2>
+	Browse all the locations contained on the server.
+</pre>
+
+<pre class="head">
+	<h2><%= link_to 'Configurations', sticker_configurations_path %></h2>
+	Browse all the configurations that were set to our clients stickers.
+</pre>
 
 
 <% content_for :topnav do %>

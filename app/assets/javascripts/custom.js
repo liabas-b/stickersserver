@@ -32,12 +32,12 @@ $(function() {
     return false;
   });
 
-  $(".pagination ul > li > a").live("click", function() {
+  $(".pagination ul > li > a").click(function() {
     $.getScript(this.href);
     return false;
   });
   $("#form_search input").keyup(function() {
-    $.get($("#form_search").attr("action"), $("#form_search").serialize() + '&' + $("#followed_form_search").serialize(), null, "script");
+    $.get($("#form_search").attr("action"), $("#form_search").serialize(), null, "script");
     console.log(this.parentNode.parentNode.id);
     return false;
   });

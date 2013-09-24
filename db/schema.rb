@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130913143456) do
+ActiveRecord::Schema.define(:version => 20130923165018) do
+
+  create_table "configurations", :force => true do |t|
+    t.string   "sticker_code"
+    t.integer  "frequency_update"
+    t.integer  "activate"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "locations", :force => true do |t|
     t.string   "sticker_code"
@@ -21,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20130913143456) do
     t.string   "options"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "sticker_configurations", :force => true do |t|
+    t.string   "sticker_code"
+    t.integer  "frequency_update"
+    t.integer  "activate"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

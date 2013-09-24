@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sticker_code: MyString
+  frequency_update: 1
+  activate: 1
+
+two:
+  sticker_code: MyString
+  frequency_update: 1
+  activate: 1
