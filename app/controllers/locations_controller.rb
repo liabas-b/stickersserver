@@ -13,7 +13,13 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @locations }
+      format.json {
+        if (params[:last] == 'true')
+          render :json => Location.search(params[:search], "sticker_code").last
+        else
+          render json: @locations
+        end
+      }
       format.js
     end
   end
