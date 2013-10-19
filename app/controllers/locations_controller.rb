@@ -96,7 +96,7 @@ class LocationsController < ApplicationController
   end
 
   def last_location
-    locations = Location.where('sticker_code="' + params[:sticker_code] + '"')
+    locations = Location.where("location.sticker_code='" + params[:sticker_code] + "'")
     if !locations.nil? and locations.count > 0
       puts locations.first.inspect
       render :json => locations.last
