@@ -96,9 +96,10 @@ class LocationsController < ApplicationController
   end
 
   def last_location
-    location = Location.find_by_sticker_code(params[:sticker_code])
-    if not location.nil?
-      render :json => location
+    locations = Location.where('sticker_code="' + params[:sticker_code] + '"')
+    if !locations.nil? and locations.count > 0
+      puts locations.first.inspect
+      render :json => locations.last
     else
       render :json => nil, status: :bad_request
     end
