@@ -95,6 +95,15 @@ class LocationsController < ApplicationController
     end
   end
 
+  def last_location
+    locations = Location.find_by_sticker_code(params[:sticker_code])
+    if locations and locations.any?
+      render :json => locations.first
+    else
+      render :json => 'Not found', status: :bad_request
+    end
+  end
+
   private
 
     def sort_column
