@@ -100,7 +100,7 @@ class LocationsController < ApplicationController
     if not location.nil?
       render :json => location
     else
-      render :json => 'Not found', status: :bad_request
+      render :json => nil, status: :bad_request
     end
   end
 
