@@ -21,7 +21,7 @@ class StickerConfigurationsController < ApplicationController
   # GET /sticker_configurations/1
   # GET /sticker_configurations/1.json
   def show
-    @sticker_configuration = StickerConfiguration.find(params[:id])
+    @sticker_configuration = StickerConfiguration.where(' sticker_code="' + params[:id] + '" OR id="' + params[:id]).first
 
     respond_to do |format|
       format.html # show.html.erb

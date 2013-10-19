@@ -8,4 +8,5 @@ class StickerConfiguration < ActiveRecord::Base
       scoped
     end
   end
+
 end
