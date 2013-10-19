@@ -1,6 +1,6 @@
 class Location < ActiveRecord::Base
   attr_accessible :date, :latitude, :longitude, :options, :sticker_code
-
+#
   before_save :set_date
 
   def self.search(search, column = 'code')
