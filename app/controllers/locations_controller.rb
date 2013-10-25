@@ -17,7 +17,7 @@ class LocationsController < ApplicationController
         if (params[:last] == 'true')
           render :json => Location.search(params[:search], "sticker_code").last
         else
-          render json: @locations
+          render json: @locations, token: 'azerty'
         end
       }
       format.js
