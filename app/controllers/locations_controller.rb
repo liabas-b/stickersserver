@@ -9,7 +9,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction)
-    @locations = @locations.paginate(per_page: 10, :page => params[:page]) unless params[:paginate] == 'false'
+    @locations = @locations.paginate(per_page: 100, :page => params[:page]) unless params[:paginate] == 'false'
 
     respond_to do |format|
       format.html # index.html.erb
