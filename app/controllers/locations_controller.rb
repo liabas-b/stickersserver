@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.search(params[:search], params["column"]).reorder(sort_column + " " + sort_direction)
+    @locations = Location.search(params[:search], params[:column]).reorder(sort_column + " " + sort_direction)
     @locations = @locations.paginate(per_page: 100, :page => params[:page]) unless params[:paginate] == 'false'
 
     respond_to do |format|
@@ -59,6 +59,7 @@ class LocationsController < ApplicationController
     respond_to do |format|
       if @location.save
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.js
         format.json { render json: @location, status: :created, location: @location }
       else
         format.html { render action: "new" }

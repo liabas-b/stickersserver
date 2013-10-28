@@ -15,6 +15,10 @@ class StaticPagesController < ApplicationController
     end
 	end
 
+    
+  def web_sockets
+  end
+
 	private
 
     def sort_column
