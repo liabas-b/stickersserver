@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  attr_accessible :date, :latitude, :longitude, :options, :sticker_code, :is_new
+  attr_accessible :date, :latitude, :longitude, :sticker_code, :is_new
   before_save :set_date
   after_create :after_create_callback
 
